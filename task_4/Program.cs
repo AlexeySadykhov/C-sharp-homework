@@ -2,7 +2,7 @@
 {
     if (x <= 1)
     {
-        Console.WriteLine("Number must be greater than one");
+        Console.WriteLine("Error. Number must be higher than 1.");
     }
     else
     {
