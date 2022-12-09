@@ -1,4 +1,20 @@
-﻿// Task 1
+﻿int GetNumber(string message)
+{
+    bool isCorrect = false;
+    int result = 0;
+    while (!isCorrect)
+    {
+        Console.WriteLine(message);
+        if (int.TryParse(Console.ReadLine(), out result))
+        {
+            isCorrect = true;
+        }
+        else Console.WriteLine("Error. Input is incorrect.");
+    }
+    return result;
+}
+
+// Task 1
 int NumberToPow(int x, int n)
 {
     int result = 1;
@@ -8,13 +24,12 @@ int NumberToPow(int x, int n)
     }
     return result;
 }
-
-Console.Write("Task 1.\nEnter the number:");
-int num = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Enter the pow:");
-int pow = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine(NumberToPow(num, pow));
 // Вообще есть же Math.Pow(), ну да ладно.
+
+Console.WriteLine("Task 1.");
+int num = GetNumber("Enter the number:");
+int pow = GetNumber("Enter the pow:");
+Console.WriteLine(NumberToPow(num, pow));
 
 // Task 2
 int SumOfDigits(int x)
@@ -28,8 +43,8 @@ int SumOfDigits(int x)
     return sm;
 }
 
-Console.Write("Task 2.\nEnter the number:");
-Console.WriteLine(SumOfDigits(Convert.ToInt32(Console.ReadLine())));
+Console.WriteLine("Task 2.");
+Console.WriteLine(SumOfDigits(GetNumber("Enter the number:")));
 
 // Task 3
 int[] CreateArray(int size = 8, string nums = "")
